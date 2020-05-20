@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="COVID-19">
+  <meta name="author" content="Sinem Ak">
+  <title>COVID-19</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css"/>
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color:#00A6A3;">
+      <div class="container">
+          <button class="navbar-toggler" data-toogle="collapse" data-target="#nvbCollapse">
+              <span class="navbar-toggler-icon"></span></button>
+              <a href="#" class="navbar-brand">COVID-19</a>
+          <div class="collapse navbar-collapse" id="nvbCollapse">
+              <ul class="navbar-nav ml-auto">
+			      <li class="nav-item"> 
+                  <a class="nav-link js-scroll-trigger" href="#hakkinda">Hakkında</a>
+                  </li>
+                  <li class="nav-item"> 
+                  <a class="nav-link" href="haber.html">Haberler</a>
+                  </li>
+				  <li class="nav-item"> 
+                  <a class="nav-link" href="video.html">Videolar</a>
+                  </li>
+				  <li class="nav-item"> 
+                  <a class="nav-link" href="onlem.html">Alınması Gereken Önlemler</a>
+                  </li>
+				  <li class="nav-item"> 
+                  <a class="nav-link" href="harita.html">COVID-19 Haritası</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+   </nav>
+   
+   <!-- COVID19 TABLOSU -->
+   <div class="sidenav">
+        <iframe src="https://covid19.saglik.gov.tr/" width="100%" height="100%" ></iframe>
+   </div>
+   
+	<!-- COVID-19 TANITIM VIDEOSU -->
+   <div id="backSection">
+      <div class="overlay">
+          <div class="container" id="video">
+		  <div class="row text-center" style="color: white;">
+              <div class="col my-auto">
+				  <div class="embed-responsive embed-responsive-16by9 rounded">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qa087kSwqU4"></iframe>
+				  </div>
+			  </div>				  
+			  </div>
+		  </div>
+	  </div>
+  </div>
+   
+	<!-- HAKKINDA -->
+  <div id="backSection">
+      <div class="overlay">
+          <div class="container" id="hakkinda">
+              <div class="row text-center" style="color: white;">
+              <div class="col my-auto">
+                  <h1 class="display-3"><span style="color: #e50800;">COVID-19</span> Nedir?</h1>
+				  <img src="img/covid19.png" alt="Covid19" height="225" width="225" class="rounded-circle float-right"/>
+				  <br>
+				  <p>Solunum yolu ile yani, çok kısa zamanda geniş kitlelere ulaşabilip hastalandırabilecek bir bulaşma yolu ile bulaşan, Çin’de ortaya çıkmış bir virüstür.</p>
+				  <p>Kuru öksürük, ateş ve daha ciddi vakalarda nefes almada zorluk gibi semptomlarla birlikte solunum yolu sorununa yol açar.</p><br><br>
+				  <img src="img/semptomlar.jpg" alt="Covid19 Semptomları" height="350" width="550" class="rounded mx-auto"/>
+              </div>				  
+			  </div>
+          </div>
+	  </div>
+  </div>
+
+	<!-- BUGÜN KENDİNİ NASIL HİSSEDİYORSUN? -->
+  <div id="backSection">
+      <div class="overlay">
+          <div class="container" id="soru" ng-app="myApp" ng-controller="myController">
+		  <div class="row text-center" style="color: white;">
+              <div class="col my-auto">
+				  <h1 class="display-4">Bugün Kendini Nasıl Hissediyorsun?</h1><br>
+				  <div ng-hide="val">
+					<button ng-click="myFuncH()" type="button" class="btn btn-light btn-lg" id="good">Sağlıklı</button>
+					<button ng-click="myFuncI()" type="button" class="btn btn-light btn-lg" style="margin-left:10px;" id="bad">Hasta</button>
+				  </div>
+				  <div ng-show="val"> <br>
+					<p id="isaret"></p> <br>
+					<p>Siteyi ziyeret eden {{count}} kişiden {{healthy}} kişi kendini sağlıklı, {{ill}} kişi kendini hasta hissediyor.</p>
+				  </div>
+			  </div>
+		  </div>
+		  </div>
+	  </div>
+  </div>
+  
+<script>
+	var app = angular.module('myApp',[]);
+	app.controller('myController',function($scope){
+		$scope.val = false;
+		$scope.ill = 2;
+		$scope.healthy = 8;
+		$scope.count = 10;
+		$scope.myFuncH = function(){
+			$scope.healthy = $scope.healthy + 1;
+			$scope.count = $scope.count + 1;
+			$scope.val = true;
+			var x = "Kendinizi 'Sağlıklı' olarak işaretlediniz. Sağlığınızı korumak için tedbirleri elden bırakmayınız.";
+			document.getElementById("isaret").innerHTML = x; 
+		}
+		$scope.myFuncI=function(){
+			$scope.ill = $scope.ill + 1;
+			$scope.count = $scope.count+1;
+			$scope.val = true;
+			var x = "Kendinizi 'Hasta' olarak işaretlediniz. Bir doktora görünmenizi öneririz.";
+			document.getElementById("isaret").innerHTML = x; 
+		}
+	});
+</script>
+
+</body>
+</html>
