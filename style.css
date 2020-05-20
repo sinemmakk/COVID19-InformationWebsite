@@ -1,0 +1,197 @@
+.navbar{
+border-bottom: #e5f6f5 2px solid;
+}
+
+.navbar .navbar-brand{
+color: #e50800 !important;
+font-size:27px;
+}
+
+.bg-dark{
+background-color:rgba(0,0,0, 1) !important;
+}
+
+.nav-link{
+color: white !important;
+text-transform: uppercase;
+transition: color .5s ease;
+}
+
+.nav-link:hover{
+color: #e50800 !important
+}
+
+#backSection{
+background: url('../img/background.png') repeat center center fixed;
+background-size: cover;
+height: 100vh;
+}
+
+#backSection .overlay{
+background-color:rgba(255,255,255,.1);
+}
+
+#backSection .row{
+height:100vh;
+}
+
+#backSection span {
+ color: #e5f6f5 !important
+}
+
+p{
+font-size:24px;
+color: white !important
+}
+
+.sidenav {
+height: 100%;
+width: 290px;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: #00A6A3;
+overflow-x: hidden;
+padding-top: 70px !important;
+overflow: hidden;
+}
+
+.container {
+padding-left: 75px !important;
+}
+
+/* Haber - Carousel CSS */
+.carlink {
+color: white !important;
+font-size:20px;
+}
+.carlink:hover{
+color: #e50800 !important;
+}
+
+/* Haber - Vertical Tab CSS */
+.tab{
+    font: bold 13px;
+    background-color: #720400;
+    border: 1px solid #CECECE;
+    margin:30px auto;
+    width: 1100px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.tab ul{
+    float: left !important;
+    list-style: none;
+    text-align: left;
+    margin: 0px;
+    padding-left: 0px;
+}
+
+.tab ul li{
+    margin-right: -1px;
+}
+
+.tab ul li a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid transparent;
+    border-right: 0px;
+    border-left: 0px;
+    padding: 16px 40px 16px 20px;
+}
+
+.tab ul li a.tab-active {
+    background-color: #e50800;
+}
+
+.tab ul li:first-child a{
+    border-top: 0px;
+}
+
+.tab .content{
+    overflow: hidden;
+    border-left: 1px solid #dddddd;
+    font-weight: normal;
+    background-color: #fff;
+    padding: 20px 40px 45px;
+    margin: 0px auto;
+    box-shadow: -3px 0 0px #F3F3F3;
+    text-align: center;
+}
+
+.tab .content div{
+    display: none;
+}
+
+.tab .content div.content-active{
+    display: block;
+}
+
+.tab .content div p{
+    color: #565a5c;
+    line-height: 1.5;
+    text-align: left;
+    margin: 5px 0px 20px;
+}
+
+.tab .content div img{
+    width: 100%;
+	height:300px;
+}
+
+@media (max-width: 685px) {
+.tab ul{
+	float: none;
+}
+
+.tab ul li{
+    display: inline-block;
+    margin-bottom: -1px;
+}
+
+.tab ul li a{
+    border: 1px solid transparent;
+    border-bottom: 0px;
+    border-top: 0px;
+    padding: 12px 15px;
+}
+
+.tab ul li a.tab-active {
+    border-color: #dddddd;
+    background-color: #ffffff;
+    box-shadow: 2px 0px 0px #EFEFEF;
+}
+
+.tab ul li:first-child a{
+    border-left: 0px;
+}
+
+.tab .content{
+    padding: 15px 30px 30px;
+    border-left: 0px;
+    border-top: 1px solid #dddddd;
+    box-shadow: 0px -3px 0px #F3F3F3;
+}
+
+}
+
+.tab .content p {
+	color: black !important;
+	font-size: 17px;
+}
+
+/* Haber - Card CSS */
+.card-body p {
+	color: black !important;
+	font-size: 15px;
+}
+
+/* COVID19 Harita CSS */
+.harita {
+	margin-left:290px;
+	margin-top:70px;
+	overflow:hidden;
+}
