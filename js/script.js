@@ -1,4 +1,6 @@
-// For Video Page
+// Sinem Ak - 1306170075
+
+// Video
 $('#video1').on('hidden.bs.modal', function (e) {
   $('#video1 iframe').attr("src", $("#video1 iframe").attr("src"));
 });
